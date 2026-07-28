@@ -1,0 +1,54 @@
+:root {
+  --couleur-primaire: #13034b;
+  --couleur-texte: rgb(231, 231, 234);
+}
+
+
+
+header {
+  background-color: var(--couleur-primaire);
+  color: var(--couleur-texte);
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;   /* empilé par défaut = mobile */
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row;    /* côte à côte, seulement à partir de 768px de large */
+    justify-content: flex-start;
+  }
+}
+nav a {
+text-decoration: none;
+}
+
+footer {text-align:center;}
+
+.carte {
+    padding: 20px;
+    border: 3px solid var(--couleur-primaire);
+    margin: 40px;
+}
+
+.carte-projet {
+  border: 2px solid var(--couleur-primaire);
+  padding: 20px;
+  text-align: center;
+}
+
+.grille-projets {
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile : 1 seule colonne, empilé */
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .grille-projets {
+    grid-template-columns: repeat(3, 1fr);  /* dès 768px : 3 colonnes égales */
+  }
+}
