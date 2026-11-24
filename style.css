@@ -23,13 +23,25 @@ nav {
     justify-content: flex-start;
   }
 }
-nav a {
+nav a{
+  color: var(--couleur-primaire);
 text-decoration: none;
+transition: color 0.2s ease;
 }
 
-footer {text-align:center;}
+nav a:hover {
+  color: rgb(231, 231, 234);  /* couleur au survol */
+}
+footer {text-align:center;
+  display: flex;
+  gap: 10px;    
+  justify-content: center;  
+}
 
-.carte {
+.carte, .carte-projet, .carte-projet:hover  {
+  transition: box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 20px;
     border: 3px solid var(--couleur-primaire);
     margin: 40px;
@@ -51,4 +63,16 @@ footer {text-align:center;}
   .grille-projets {
     grid-template-columns: repeat(3, 1fr);  /* dès 768px : 3 colonnes égales */
   }
+}
+
+img {
+  max-width: 100%;   /* ne dépasse jamais la largeur de son conteneur */
+  height: auto;      /* garde les proportions, pas d'écrasement */
+  display: block;    /* évite un petit espace fantôme sous l'image */
+}
+
+.icone-sociale {
+  width: 32px;
+  height: 32px;
+
 }
